@@ -42,5 +42,4 @@ public class ProductTest {
 
         Assertions.assertThrows(NotFoundException.class, () -> repo.remove(6));
     }
-
 }
