@@ -40,7 +40,7 @@ public class ProductTest {
         repo.add(product2);
         repo.add(product3);
 
-        Assertions.assertThrows(NotFoundException.class, () -> repo.remove(5));
+        Assertions.assertThrows(NotFoundException.class, () -> repo.remove(6));
     }
 
 }
