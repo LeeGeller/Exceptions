@@ -21,8 +21,8 @@ public class ProductTest {
 
         repo.remove(2);
 
-        Product[] actual = repo.findAll();
         Product[] expected = {product1, product3};
+        Product[] actual = repo.findAll();
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -41,5 +41,23 @@ public class ProductTest {
         repo.add(product3);
 
         Assertions.assertThrows(NotFoundException.class, () -> repo.remove(6));
+    }
+
+    @Test
+    public void testFindAll(){
+        ShopRepository repo = new ShopRepository();
+
+        Product product1 = new Product(1, "Kiwi", 129);
+        Product product2 = new Product(2, "Apple", 78);
+        Product product3 = new Product(3, "Juice", 150);
+
+        repo.add(product1);
+        repo.add(product2);
+        repo.add(product3);
+
+        Product[] expected = repo.findAll();
+        Product [] actual = {product1, product2, product3};
+
+        Assertions.assertArrayEquals(expected,actual);
     }
 }
